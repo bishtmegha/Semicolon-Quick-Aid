@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#2196f3">
+    <title>Framework7 Material</title>
+    <link rel="stylesheet" href="/css/framework7.material.css">
+    <link rel="stylesheet" href="/css/framework7.material.colors.css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/material-icons.css">
+    <link rel="stylesheet" href="/css/kitchen-sink.css">
+    <link rel="stylesheet" href="/css/framework7-icons.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/img/icon.png">
+</head>
+<style>
+body{
+ padding: 0px;
+}
+</style>
+<body>
+    <div class="views">
+        <div class="view view-main navbar-through">
+            <div class="pages">
+                <div data-page="tabs-swipeable" class="page toolbar-fixed">
+
+                    <div class="toolbar tabbar">
+                        <div class="toolbar-inner"><a href="#tab1" class="active tab-link">Emergency</a><a href="#tab2" class="tab-link">Consult</a><a href="#tab3" class="tab-link">Notifications</a></div>
+                    </div>
+                    <div class="tabs-swipeable-wrap">
+                        <div class="tabs">
+                            <div id="tab1" class="page-content tab active">
+							
+								<div class="card">
+									<div class="card-content">
+										<div class="card-content-inner">I have an emergency</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-content">
+										<div class="card-content-inner">I have severe pain</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-content">
+										<div class="card-content-inner">I had a fall and not able to move my leg</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-content">
+										<div class="card-content-inner">I want to book an appointment</div>
+									</div>
+								</div>
+							
+							<div class="content-block">
+								<p align="center">OR<br />Talk to QuickAid</p>
+							</div>
+							
+							<div style="width: inherit;">
+								<a href="#" class="talk-to-quickaid floating-button color-blue" style="position: static; margin: 0 auto;">
+									<i class="f7-icons color-blue">mic_fill</i>
+								</a>
+							</div>
+
+                            </div>
+                            <div id="tab2" class="page-content tab">
+
+                            <div class="page toolbar-fixed">
+
+                                <div class="toolbar messagebar">
+                                    <div class="toolbar-inner">
+                                        <textarea id="chat-input" class="message_textarea" placeholder="Message"></textarea><a href="#" class="link speak-message"><i class="f7-icons color-blue">mic_fill</i></a><a id="send_message" class="link send-message" style="display: none;"><i class="f7-icons color-blue">play_fill</i></a>
+                                    </div>
+                                </div>
+                                <div class="page-content messages-content">
+                                    <div style="height: 50px;">&nbsp;</div>
+                                    <div id="conversation" class="messages messages-auto-layout">
+                                        
+                                    </div>
+									<div style="height: 50px;">&nbsp;</div>
+                                </div>
+
+                                <div class="popup popup-video-call">
+                                    <div class="navbar">
+                                        <div class="navbar-inner">
+                                            <div class="center"></div>
+                                            <div class="right"><a href="#" class="link close-popup">Hang Up</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="content-block" id="myPublisherDiv">
+                                        <p>[VIDEO CHAT]</p>
+										
+                                    </div>
+                                </div>
+								
+							</div>
+
+                            </div>
+                            <div id="tab3" class="page-content tab">
+                                <div class="content-block">
+                                    
+								<div class="card ks-card-header-pic">
+                                    <div style="background-image:url(img/doctor-appointment.jpg); color: #000;" valign="bottom" class="card-header color-white no-border">Doctor Appointment</div>
+                                    <div class="card-content">
+                                        <div class="card-content-inner">
+                                            <p class="color-gray">Coming up on March 5, 2017</p>
+                                            <p>You have a scheduled appointment with Doctor Madhav Sanzgiry on March 5, 2017 at 11:30am at Salgaocar Medical Research Centre, Vasco da Gama, Goa.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card ks-card-header-pic">
+                                    <div style="background-image:url(img/blood-test.jpg); color: #fff;" valign="bottom" class="card-header color-white no-border">Blood Test</div>
+                                    <div class="card-content">
+                                        <div class="card-content-inner">
+                                            <p class="color-gray">Coming up on March 1, 2017</p>
+                                            <p>You have a scheduled blood test on March 1, 2017 at 7:30am at D'Souza Pathology Labs, Vasco da Gama, Goa. Please remember to take the blood test on an empty stomach.</p>
+                                        </div>
+                                    </div>
+                                </div>
+									
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="/js/watson-speech.min.js"></script>
+    <script type="text/javascript" src="/js/framework7.js"></script>
+
+
+	
+	<script type="text/javascript" src="/js/kitchen-sink.js"></script>
+		<script type="text/javascript" src="/js/demo.js"></script>
+
+</body>
+
+</html>

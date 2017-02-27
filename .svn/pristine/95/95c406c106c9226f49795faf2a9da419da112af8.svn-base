@@ -1,0 +1,4 @@
+.color-blue { color: #2196f3; }
+.tabbar a.tab-link {
+	font-size: 12px;
+}

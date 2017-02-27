@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#2196f3">
+    <title>Framework7 Material</title>
+    <link rel="stylesheet" href="/css/framework7.material.css">
+    <link rel="stylesheet" href="/css/framework7.material.colors.css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/material-icons.css">
+    <link rel="stylesheet" href="/css/kitchen-sink.css">
+    <link rel="stylesheet" href="/css/framework7-icons.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/img/icon.png">
+</head>
+
+<body>
+    <div class="views">
+        <div class="view view-main navbar-through">
+            <div class="pages">
+                <div data-page="tabs-swipeable" class="page toolbar-fixed">
+
+                    <div class="toolbar tabbar">
+                        <div class="toolbar-inner"><a href="#tab1" class="active tab-link">Emergency</a><a href="#tab2" class="tab-link">Consult</a><a href="#tab3" class="tab-link">Notifications</a></div>
+                    </div>
+                    <div class="tabs-swipeable-wrap">
+                        <div class="tabs">
+                            <div id="tab1" class="page-content tab active">
+							
+							<div class="suggestion_div">
+							
+								<div class="card">
+                                    <div class="card-content">
+                                        <div class="card-content-inner">I'm not feeling too well.</div>
+                                    </div>
+                                </div>
+								<div class="card">
+                                    <div class="card-content">
+                                        <div class="card-content-inner">I need an ambulance!</div>
+                                    </div>
+                                </div>
+								<div class="card">
+                                    <div class="card-content">
+                                        <div class="card-content-inner">Book an appointment with my doctor.</div>
+                                    </div>
+                                </div>
+								
+								<div class="content-block">
+									<p align="center">OR<br />Talk to QuickAid</p>
+								</div>
+								
+								<div style="width: inherit;">
+									<a href="#" class="talk-to-quickaid floating-button color-blue" style="position: static; margin: 0 auto;">
+										<i class="f7-icons color-blue">mic_fill</i>
+									</a>
+								</div>
+							
+							</div>
+							
+							<div class="message_div" style="display: none;">
+							<div class="page toolbar-fixed">
+
+                                <div class="toolbar messagebar">
+                                    <div class="toolbar-inner">
+                                        <textarea class="message_textarea" placeholder="Message"></textarea><a href="#" class="link speak-message"><i class="f7-icons color-blue">mic_fill</i></a><a href="#" class="link send-message" style="display: none;"><i class="f7-icons color-blue">play_fill</i></a>
+                                    </div>
+                                </div>
+                                <div class="page-content messages-content">
+                                    <div style="height: 50px;">&nbsp;</div>
+                                    <div class="messages messages-auto-layout">
+                                        <div class="message message-sent message-with-avatar">
+                                            <div class="message-text">Hi QuickAid
+                                                <div class="message-date">Feb 9, 12:58</div>
+                                            </div>
+                                            <div style="background-image:url(http://lorempixel.com/200/200/people/6)" class="message-avatar"></div>
+                                        </div>
+										
+                                        <div class="message message-received message-with-avatar">
+                                            <div class="message-name">QuickAid Bot</div>
+                                            <div class="message-text">Hello. I am QuickAid Bot
+                                                <div class="message-date">Feb 9, 13:11</div>
+                                                <div style="border-top: 1px solid #000; margin: 10px 0 0 0; padding: 10px 0 5px 0; font-size: 10px; text-align: center;"><a href="#" data-popup=".popup-video-call" class="open-popup"><i class="f7-icons">videocam_round_fill</i></a></div>
+                                            </div>
+                                            <div style="background-image:url(img/quickaid_profile_photo.png" class="message-avatar"></div>
+                                        </div>
+                                    </div>
+									<div style="height: 50px;">&nbsp;</div>
+                                </div>
+
+                                <div class="popup popup-video-call">
+                                    <div class="navbar">
+                                        <div class="navbar-inner">
+                                            <div class="center"></div>
+                                            <div class="right"><a href="#" class="link close-popup">Hang Up</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="content-block">
+                                        <p>[VIDEO CHAT]</p>
+                                    </div>
+                                </div>
+								
+							</div>
+							</div>
+
+                            </div>
+                            <div id="tab2" class="page-content tab">
+
+                            <div class="page toolbar-fixed">
+
+                                <div class="toolbar messagebar">
+                                    <div class="toolbar-inner">
+                                        <textarea class="message_textarea" placeholder="Message"></textarea><a href="#" class="link speak-message"><i class="f7-icons color-blue">mic_fill</i></a><a href="#" class="link send-message" style="display: none;"><i class="f7-icons color-blue">play_fill</i></a>
+                                    </div>
+                                </div>
+                                <div class="page-content messages-content">
+                                    <div style="height: 50px;">&nbsp;</div>
+                                    <div class="messages messages-auto-layout">
+                                        <div class="message message-sent message-with-avatar">
+                                            <div class="message-text">Hi QuickAid
+                                                <div class="message-date">Feb 9, 12:58</div>
+                                            </div>
+                                            <div style="background-image:url(http://lorempixel.com/200/200/people/6)" class="message-avatar"></div>
+                                        </div>
+										
+                                        <div class="message message-received message-with-avatar">
+                                            <div class="message-name">QuickAid Bot</div>
+                                            <div class="message-text">Hello. I am QuickAid Bot
+                                                <div class="message-date">Feb 9, 13:11</div>
+                                                <div style="border-top: 1px solid #000; margin: 10px 0 0 0; padding: 10px 0 5px 0; font-size: 10px; text-align: center;"><a href="#" data-popup=".popup-video-call" class="open-popup"><i class="f7-icons">videocam_round_fill</i></a></div>
+                                            </div>
+                                            <div style="background-image:url(img/quickaid_profile_photo.png" class="message-avatar"></div>
+                                        </div>
+                                    </div>
+									<div style="height: 50px;">&nbsp;</div>
+                                </div>
+
+                                <div class="popup popup-video-call">
+                                    <div class="navbar">
+                                        <div class="navbar-inner">
+                                            <div class="center"></div>
+                                            <div class="right"><a href="#" class="link close-popup">Hang Up</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="content-block">
+                                        <p>[VIDEO CHAT]</p>
+                                    </div>
+                                </div>
+								
+							</div>
+
+                            </div>
+                            <div id="tab3" class="page-content tab">
+                                <div class="content-block">
+                                    
+								<div class="card">
+                                    <div class="card-content">
+                                        <div class="card-content-inner">This is simple card with plain text. But card could contain its own header, footer, list view, image, and any elements inside.</div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">Card header</div>
+                                    <div class="card-content">
+                                        <div class="card-content-inner">Card with header and footer. Card header is used to display card title and footer for some additional information or for custom actions.</div>
+                                    </div>
+                                    <div class="card-footer">Card Footer</div>
+                                </div>
+
+                                <div class="card ks-card-header-pic">
+                                    <div style="background-image:url(http://lorempixel.com/1000/600/nature/3/)" valign="bottom" class="card-header color-white no-border">Journey To Mountains</div>
+                                    <div class="card-content">
+                                        <div class="card-content-inner">
+                                            <p class="color-gray">Posted on January 21, 2015</p>
+                                            <p>Quisque eget vestibulum nulla. Quisque quis dui quis ex ultricies efficitur vitae non felis. Phasellus quis nibh hendrerit...</p>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer"><a href="#" class="link">Like</a><a href="#" class="link">Read more</a></div>
+                                </div>
+
+                                <div class="card ks-card-header-pic">
+                                    <div style="background-image:url(http://lorempixel.com/1000/600/people/6/)" valign="bottom" class="card-header color-white no-border">Lorem Ipsum</div>
+                                    <div class="card-content">
+                                        <div class="card-content-inner">
+                                            <p class="color-gray">Posted on January 21, 2015</p>
+                                            <p>Quisque eget vestibulum nulla. Quisque quis dui quis ex ultricies efficitur vitae non felis. Phasellus quis nibh hendrerit...</p>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer"><a href="#" class="link">Like</a><a href="#" class="link">Read more</a></div>
+                                </div>
+
+                                <div class="card ks-facebook-card">
+                                    <div class="card-header no-border">
+                                        <div class="ks-facebook-avatar"><img src="http://lorempixel.com/68/68/people/1/" width="34" height="34" /></div>
+                                        <div class="ks-facebook-name">John Doe</div>
+                                        <div class="ks-facebook-date">Monday at 3:47 PM</div>
+                                    </div>
+                                    <div class="card-content"> <img src="http://lorempixel.com/1000/700/nature/8/" width="100%" /></div>
+                                    <div class="card-footer no-border"><a href="#" class="link">Like</a><a href="#" class="link">Comment</a><a href="#" class="link">Share</a></div>
+                                </div>
+									
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/framework7.js"></script>
+    <script type="text/javascript" src="/js/kitchen-sink.js"></script>
+</body>
+
+</html>

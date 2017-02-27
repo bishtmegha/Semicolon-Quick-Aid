@@ -1,0 +1,576 @@
+{{>header}}
+
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <!-- top tiles -->
+         
+          <br />
+
+          <div class="row">
+
+
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Casualties <small></small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>Patient Name</th>
+                          <th>Age</th>
+                          <th>ETA(Mins)</th>
+                          <th>Initial Diagnosis</th>
+                          <th>Feedback</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                       {{#appoitments}}
+                            <tr class="casualtyItem">
+                              <th scope="row"><a  class="appointments" data-phone="{{phone}}" data-isMale="{{isMale}}" data-gender="{{gender}}" data-state="{{state}}" data-city="{{city}}" data-weight ="{{weight}}" data-age="{{age}}" data-height="{{height}}" data-insurance="{{insurance}}"  href="javascript:void(0);" data-toggle="" data-target=""><i class="fa {{#isMale}}fa-male{{/isMale}} {{^isMale}}fa-female{{/isMale}}"></i></a></th>
+                              <td class="pname" >{{firstname}} {{lastname}}</td>
+                              <td class="page">{{age}}</td>
+                              <td class="pETA">{{arrivalTime}}</td>
+                              <td class="pDiagnos">{{disease}}</td>
+                              <td class="">
+                                  {{#validCheck}}
+                                      <a href="javascript:void(0);" class=" validateButtons"><i class="fa fa-thumbs-up "></i></a>
+                                      <a href="javascript:void(0);" class="margin-left-5 validateButtons"><i class="fa fa-thumbs-down "></i></a>
+                                  {{/validCheck}}
+                                </td>
+                            </tr>
+                       {{/appoitments}}
+                     
+                      </tbody>
+                    </table>
+
+                  </div>
+                </div>
+              </div>    
+              
+              
+              
+              
+              
+              
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            
+            <div class="panel panel-default">
+                <div class="panel-heading" id="accordion">
+                    <span class="glyphicon glyphicon-comment"></span> Conversation History
+                    <div class="btn-group pull-right">
+                        <a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                    </div>
+                </div>
+            <div class="panel-collapse collapse in" id="collapseOne">
+                     <div class="panel-body">
+                    <ul class="chat">
+                           <li class="right clearfix"><span class="chat-img pull-right">
+                            <img src="/images/quickaid_small.png" style="width:70%" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
+                                    <strong class="pull-right primary-font">Bots</strong>
+                                </div>
+                                <p>
+                                Hi, I am quick aid, how can I assist you ?
+                                </p>
+                            </div>
+                        </li>
+                        <li class=""><span class="chat-img pull-left col-md-5">
+                            <img src="/images/default.png" style="width:inherit" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong class="primary-font currCusername">Catherine Perry</strong> <small class="pull-right text-muted">
+                                        <span class="glyphicon glyphicon-time"></span>12 mins ago</small>
+                                </div>
+                                <p>
+                                   Need an emergency
+                                </p>
+                            </div>
+                        </li>
+                        <li class="right clearfix"><span class="chat-img pull-right">
+                            <img src="/images/quickaid_small.png" style="width:70%" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
+                                    <strong class="pull-right primary-font">Bots</strong>
+                                </div>
+                                <p>
+                                Are you in distress and is it for someone else ?
+                                </p>
+                            </div>
+                        </li>
+                         <li class="left clearfix"><span class="chat-img pull-left col-md-5">
+                            <img src="/images/default.png" style="width:inherit" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong class="primary-font currCusername">Catherine Perry</strong> <small class="pull-right text-muted">
+                                        <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
+                                </div>
+                                <p>
+                                   For me
+                                </p>
+                            </div>
+                        </li>
+                         <li class="right clearfix"><span class="chat-img pull-right">
+                            <img src="/images/quickaid_small.png" style="width:70%" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
+                                    <strong class="pull-right primary-font">Bots</strong>
+                                </div>
+                                <p>
+                               What problem are you facing?
+                                </p>
+                            </div>
+                        </li>
+                        <li class="left clearfix"><span class="chat-img pull-left col-md-5">
+                            <img src="/images/default.png" style="width:inherit" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong class="primary-font currCusername">Catherine Perry</strong> <small class="pull-right text-muted">
+                                        <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
+                                </div>
+                                <p>
+                                   I had a fall.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="right clearfix"><span class="chat-img pull-right">
+                            <img src="/images/quickaid_small.png" style="width:70%" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
+                                    <strong class="pull-right primary-font">Bots</strong>
+                                </div>
+                                <p>
+                               Is there someone to help ?
+                                </p>
+                            </div>
+                        </li>
+                        <li class="left clearfix"><span class="chat-img pull-left col-md-5">
+                            <img src="/images/default.png" style="width:inherit" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong class="primary-font currCusername">Catherine Perry</strong> <small class="pull-right text-muted">
+                                        <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
+                                </div>
+                                <p>
+                                   No i am alone.
+                                </p>
+                            </div>
+                        </li> 
+                        <li class="right clearfix"><span class="chat-img pull-right">
+                            <img src="/images/quickaid_small.png" style="width:70%" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
+                                    <strong class="pull-right primary-font">Bots</strong>
+                                </div>
+                                <p>
+                              ok, no problem. I am getting your current location as House L-44,  Verna, Salcette. Is this correct?
+                                </p>
+                            </div>
+                        </li>
+                        <li class="left clearfix"><span class="chat-img pull-left col-md-5">
+                            <img src="/images/default.png" style="width:inherit" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong class="primary-font currCusername">Catherine Perry</strong> <small class="pull-right text-muted">
+                                        <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
+                                </div>
+                                <p>
+                                  Yes
+                                </p>
+                            </div>
+                        </li> 
+                        
+                        <li class="right clearfix"><span class="chat-img pull-right">
+                            <img src="/images/quickaid_small.png" style="width:70%" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
+                                    <strong class="pull-right primary-font">Bots</strong>
+                                </div>
+                                <p>
+                              Ok, we are dispatching an ambulance immediately. Should take about 10- 15 minutes to reach there.in the meantime, please take rest and do not move too much.Are you ok to speak ? I could connect you to a doctor over video now ?
+                                </p>
+                            </div>
+                        </li>
+                        <li class="left clearfix"><span class="chat-img pull-left col-md-5">
+                            <img src="/images/default.png" style="width:inherit" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong class="primary-font currCusername">Catherine Perry</strong> <small class="pull-right text-muted">
+                                        <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
+                                </div>
+                                <p>
+                                  Ok
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            </div>
+            </div>
+              
+              
+              
+
+          </div>
+
+
+          <div class="row">
+     
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="x_panel tile fixed_height_320">
+                <div class="x_title">
+                  <h2>Ambulance Status</h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                   
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+
+                    <table class="table table-striped">
+                      <tbody>
+                          
+                     {{#ambulance}}
+                        <tr>
+                          <th scope="row"><a  href="javascript:void(0);"><i class="fa fa-ambulance {{#isFree}}free{{/isFree}} {{^isFree}}busy{{/isFree}}"></i></a></th>
+                          <td>{{driver_name}}</td>
+                          <td><a  href="javascript:void(0);"><i class="fa fa-mobile"></i></a></td>
+                        </tr>
+                     {{/ambulance}}      
+                
+                      </tbody>
+                    </table>
+
+                  </div>
+              </div>
+            </div>
+              
+              
+              
+
+            <div class="col-md-8 col-sm-8 col-xs-12">
+
+              <div class="row">
+
+                <!-- Start to do list -->
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <div class="x_panel">
+                    <div class="x_title">
+                      <h2>Ward Capacity</h2>
+                      <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                      </ul>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        
+                    {{#ward}}
+                    <div class="widget_summary">
+                      <div class="w_left w_25">
+                        <span>{{ward_name}}</span>
+                      </div>
+                      <div class="w_center w_55">
+                        <div class="progress">
+                          <div class="progress-bar bg-green" role="progressbar" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%;">
+                            <span class="sr-only">{{percentage}}% Complete</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="w_right w_20">
+                        <span>{{percentage}}%</span>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                    {{/ward}}
+                        
+                    </div>
+                  </div>
+                </div>
+                <!-- End to do list -->
+                
+                <!-- start of weather widget -->
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <div class="x_panel">
+                    <div class="x_title">
+                      <h2>Doctors On Call</h2>
+                      <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                      </ul>
+                      <div class="clearfix"></div>
+                    </div>
+               <div class="x_content">
+                  <ul class="list-unstyled msg_list">
+                   {{#doctors}}
+                    <li>
+                      <a>
+                        <span class="image">
+                          <img src="/images/default.png" alt="img" />
+                        </span>
+                        <span>
+                          <span>{{firstname}} {{lastname}}</span>
+                          <span class="time">
+                              <a href="javascript:void(0);"><i class="fa fa-skype"></i></a>
+                              <a href="javascript:void(0);"><i class="fa fa-mobile"></i></a>
+                              <a href="javascript:void(0);"><i class="fa fa-envelope"></i></a>
+                            </span>
+                        </span>
+                    
+                      </a>
+                    </li>
+                 {{/doctors}}
+            
+                  </ul>
+                </div>
+                  </div>
+
+                </div>
+                <!-- end of weather widget -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+
+<!----  modals  ---->
+
+            <!--  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="profileModal">Small modal</button>
+-->
+                  <div class="modal fade bs-example-modal-sm "  id="appointmentModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                      <div class="modal-content">
+
+                        <div class="modal-header">
+                          <img style="margin-left:70px" id="maleAvatar" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" name="aboutme"
+          width="140" height="140" class="img-circle">
+ <img style="margin-left:70px" id="femaleAvatar" src="/images/picture.jpg" name="aboutme"
+          width="140" height="140" class="img-circle">
+
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                          </button>
+                          <h4 class="modal-title" id="myModalLabel2">Appointment Details</h4>
+                        </div>
+                        <div class="modal-body">
+                                                
+                            <h4 class=""><i class="modalPname">Mark Johonson</i></h4>
+                            <div class="">
+<!--                              <h2>Nicole Pearson</h2>-->
+                              <p><strong>Initial Diagnosis: </strong> <span class="modalPDiagnoss">Chest Pain</span> </p>
+                              <p><strong>Age: </strong> <span class="modalPAge">50 </span></p>
+                              <p><strong>Arriving in: </strong> <span class="modalPEtime">40</span> </p>
+                              <p><strong>Gender: </strong> <span class="modalPGender">40</span> </p>
+                              <p><strong>State: </strong> <span class="modalPState">40</span> </p>
+                              <p><strong>City: </strong> <span class="modalPCity">40</span> </p>
+                              <p><strong>Weight: </strong> <span class="modalPWeight">40</span> </p>
+                              <p><strong>Height: </strong> <span class="modalPHeight">40</span> </p>
+                              <p><strong>Status: </strong> <span class="modalPStatus">valid</span> </p>
+                              <p><strong>Insurance: </strong> <span class="modalPInsurance">40</span> </p>
+                         
+<!--
+                              <ul class="list-unstyled">
+                                <li><i class="fa fa-building"></i> Address: </li>
+                                <li><i class="fa fa-phone"></i> Phone #: </li>
+                              </ul>
+-->
+                            </div>
+                          <div class=" bottom text-center">
+                            <div class="emphasis">
+                             
+                            </div>
+                           
+                          </div>
+                        
+                        
+                        </div>
+                        <div class="modal-footer">
+<!--                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+<!--                          <button type="button" class="btn btn-primary">Save changes</button>-->
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+<!---   -->
+
+
+
+
+
+
+
+{{>footer}}
+
+<script type="text/javascript">
+
+    var chatList = [];
+    var chaOne = [],chaTwo = [];
+    chaOne.push({bot:"Hi, I am quick aid, how can I assist you ?",
+                user:"Need an emergency"
+                })
+    chaOne.push({bot:"Are you in distress and is it for someone else ?",
+                user:"For me"
+                })
+    chaOne.push({bot:"What problem are you facing?",
+                user:"I had a fall."
+                })
+    chaOne.push({bot:"Is there someone to help ?",
+                user:" No i am alone"
+                })
+    chaOne.push({bot:"ok, no problem. I am getting your current location as House L-44,  Verna, Salcette. Is this correct?",
+                user:"Yes"
+                })
+    chaOne.push({bot:"Ok, we are dispatching an ambulance immediately. Should take about 10- 15 minutes to reach there.in the meantime, please take rest and do not move too much.Are you ok to speak ? I could connect you to a doctor over video now ?",
+                user:"Thanks"
+                })
+    chatList.push(chaOne); 
+    
+    chaTwo.push({bot:"Hi, I am quick aid, how can I assist you ?",
+                user:"I have an emergency"
+                })
+    chaTwo.push({bot:"What problem are you facing?",
+                user:"I have sudden chest pain ."
+                })
+    chaTwo.push({bot:"Is there someone to help ?",
+                user:"No i am alone."
+                })
+    chaTwo.push({bot:"ok, no problem. I am getting your current location as House I-11,  margao, Salcette. Is this correct?",
+                user:"Yes it is correct"
+                })
+    chaTwo.push({bot:"Ok, we are dispatching an ambulance immediately. Should take about 10- 15 minutes to reach there.in the meantime, please take rest and do not move too much.Are you ok to speak ? I could connect you to a doctor over video now ?",
+                user:"Ok thanks"
+                })
+    chatList.push(chaTwo);
+    
+    
+    $(document).ready(function(){
+        $(".appointments").click(function(){
+            var parentElement = $(this).parent().parent()
+            var pateintName = $(parentElement).find(".pname").text();
+            var pateintAge = $(parentElement).find(".page").text();
+            var pateintETime = $(parentElement).find(".pETA").text();
+            var pateintDiagnos = $(parentElement).find(".pDiagnos").text();
+            
+            $("#appointmentModal").find(".modalPname").text(pateintName)
+            $("#appointmentModal").find(".modalPDiagnoss").text(pateintDiagnos)
+            $("#appointmentModal").find(".modalPAge").text(pateintAge)
+            $("#appointmentModal").find(".modalPEtime").text(pateintETime)
+
+            $("#appointmentModal").find(".modalPGender").text($(this).attr("data-gender"))
+            $("#appointmentModal").find(".modalPState").text($(this).attr("data-state"))
+            $("#appointmentModal").find(".modalPCity").text($(this).attr("data-city"))
+            $("#appointmentModal").find(".modalPWeight").text($(this).attr("data-weight"))
+            $("#appointmentModal").find(".modalPHeight").text($(this).attr("data-height"))
+            $("#appointmentModal").find(".modalPInsurance").text($(this).attr("data-insurance"))
+            $("#appointmentModal").find(".modalPStatus").text($(this).attr("data-status"))
+           
+           if($(this).attr("data-isMale")=="true"){
+            $("#maleAvatar").removeClass("hidden")
+            $("#femaleAvatar").addClass("hidden")
+           }else{
+             $("#maleAvatar").addClass("hidden")
+             $("#femaleAvatar").removeClass("hidden")
+
+           }
+
+
+            $("#appointmentModal").modal("show");
+            
+        })
+        
+        $(".validateButtons").click(function(){
+            var self = this;
+            $(this).parent().find(".validateButtons").each(function(){
+                if(this != self){
+                    $(this).addClass('hidden')
+                    
+                }
+                
+            })
+            
+        })
+        $(".fa-male").css("color","blue")
+        $(".fa-female").css("color","red")
+        $(".free").css("color","green")
+        $(".busy").css("color","red") 
+        
+        $(".fa-thumbs-up").css("color","green")
+        $(".fa-thumbs-down").css("color","red")
+        
+         
+        $(".casualtyItem").click(function(){
+            var name = $(this).find(".pname").text();
+             $(".currCusername").text(name);
+            var chatArray = [];
+ 
+                if( name === "Siya Gawas"){
+                    chatArray = chatList[0]
+
+                } else{
+                     chatArray = chatList[1]
+                } 
+            $(" .chat").html("");
+
+            chatArray.forEach(function(obj){
+                var markup =   '<li class="right clearfix"><span class="chat-img pull-right">\
+                            <img src="/images/quickaid_small.png" style="width:70%" alt="User Avatar" class="img-circle" />\
+                        </span><div class="chat-body clearfix">\
+                                <div class="header">\
+                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>\
+                                    <strong class="pull-right primary-font">QuickAid</strong>\
+                                </div><p>' + obj.bot + '</p></div></li>\
+                        <li class=""><span class="chat-img pull-left col-md-5">\
+                            <img src="/images/default.png" style="width:inherit" alt="User Avatar" class="img-circle" />\
+                        </span><div class="chat-body clearfix"><div class="header">\
+                                    <strong class="primary-font currCusername">' + name + '</strong> <small class="pull-right text-muted">\
+                                        <span class="glyphicon glyphicon-time"></span>12 mins ago</small>\
+                                </div><p>' + obj.user +  '</p></div></li>'
+                  $(".chat").append(markup);
+                
+              
+            })
+            
+            
+        })
+        
+        $($(".casualtyItem")[0]).click();
+    })
+
+</script>

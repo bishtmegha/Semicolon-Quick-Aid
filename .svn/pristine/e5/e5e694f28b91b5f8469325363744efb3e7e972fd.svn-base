@@ -1,0 +1,65 @@
+{{>header}}
+<div class="right_col" role="main">
+    
+     <div class="x_panel">
+<!--<h1 class="text-primary">Patient Prediction</h1>-->
+    
+    <div class=" ">
+    <h2 class="text-primary" style="margin-left:35%">Patient Prediction <small></small></h2>
+
+
+    </div>
+<div id="container" style="width:700px; height: 500px; margin: 0 auto"></div>
+    </div>
+</div>
+   
+ <div class="right_col col-md-12" style="overflow:hidden">
+      <div class="x_panel">
+        <div class=" ">
+            <h2 class="text-primary" style="margin-left:35%">Charts<small></small></h2>
+            
+                      <div class="">
+                        <ul class="list-inline prod_color">
+                          <li class="legends">
+                            <p>Green</p>
+                            <div class="color bg-green"></div>
+                          </li>
+                          <li class="legends">
+                            <p>Blue</p>
+                            <div class="color bg-blue"></div>
+                          </li>
+                          <li class="legends">
+                            <p>Red</p>
+                            <div class="color bg-red"></div>
+                          </li>
+                          <li class="legends">
+                            <p>Orange</p>
+                            <div class="color bg-orange"></div>
+                          </li> 
+                            <li class="legends">
+                            <p>Orange</p>
+                            <div class="color bg-orange"></div>
+                          </li>
+                            <li class="legends">
+                            <p>Orange</p>
+                            <div class="color bg-orange"></div>
+                          </li>
+
+                        </ul>
+                      </div>
+        </div>
+    <iframe class="iframeContainers" src="//embed.chartblocks.com/1.0/?c=58b19f469973d23a36558c52&t=57a138de4a8cd64" frameBorder="0"></iframe>
+
+    <iframe   class="iframeContainers" src="//embed.chartblocks.com/1.0/?c=58b1a0059973d27436558c52&t=e4912c96b7e8954" frameBorder="0"></iframe>
+
+    <iframe  class="iframeContainers" src="//embed.chartblocks.com/1.0/?c=58b1a0289973d27736558c52&t=a010ec9c6556a08" frameBorder="0"></iframe>
+
+    <iframe class="iframeContainers" src="//embed.chartblocks.com/1.0/?c=58b19f1e9973d2ee35558c52&t=20cdc36c26b5e20" frameBorder="0"></iframe>
+
+<!--    <iframe width="400" height="250" src="//embed.chartblocks.com/1.0/?c=58b19ee49973d23236558c52&t=527615d8c518706" frameBorder="0"></iframe>-->
+     </div>
+</div>  
+    
+
+{{>footer}}
+ 

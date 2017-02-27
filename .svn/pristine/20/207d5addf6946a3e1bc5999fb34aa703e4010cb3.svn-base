@@ -1,0 +1,197 @@
+{{>header}}
+
+<style>
+  .fc-scroller fc-time-grid-container {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+</style>
+<div class="right_col" role="main">
+
+  <!-- top tiles -->
+  <div class="row tile_count">
+    <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+      <span class="count_top"><i class="fa fa-user" style="color:green"></i> Total Patients Expected</span>
+      <div id="totalPatients" class="count">{{data.totalPatients}}</div>
+      <span class="count_bottom"><i> <i class="fa fa-sort-asc green"></i>23% </i> </span>
+    </div>
+    <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+      <span class="count_top"><i class="fa fa-male" style="color:blue"></i> Total Males</span>
+      <div id="totalMales" class="count">{{data.totalMales}}</div>
+      <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>10% </i> </span>
+    </div>
+    <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+      <span class="count_top"><i class="fa fa-female" style="color:deeppink"></i> Total Females</span>
+      <div id="totalFemales" class="count ">{{data.totalFemales}}</div>
+      <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i></span>
+    </div>
+    <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+      <span class="count_top"><i class="fa fa-ban" style="color:red"></i> Cancellations</span>
+      <div id="cancellations" class="count">{{data.cancellations}}</div>
+      <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>10% </i></span>
+    </div>
+    <!--<div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-user"></i> Total Collections</span>
+            <div class="count">2,315</div>
+            <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-user"></i> Total Connections</span>
+            <div class="count">7,325</div>
+            <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+          </div>
+        </div>
+        -->
+    <!-- /top tiles -->
+
+    <div class="row  margin-top-50">
+      <div class="col-md-8 col-sm-8 col-xs-8">
+        <h3 align="center">Appointments</h3>
+        <div id="calendar">
+        </div>
+
+      </div>
+      <div class="col-md-4 col-sm-4 col-xs-4">
+        <h3 class="text text-center">
+          Overview
+        </h3>
+        <div id="apt-type-graph">
+        </div>
+
+
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Department Heads</h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <ul class="list-unstyled msg_list">
+              <li>
+                <a>
+                  <span class="image">
+                          <img src="/images/default.png" alt="img">
+                        </span>
+                  <span>
+                          <span>John Smith</span>
+                  <span class="time">
+                              </span></span>
+                </a><a href=""><i class="fa fa-skype"></i></a>
+                <a href=""><i class="fa fa-mobile"></i></a>
+                <a href=""><i class="fa fa-envelope"></i></a>
+
+
+
+
+              </li>
+              <li>
+                <a>
+                  <span class="image">
+                          <img src="/images/default.png" alt="img">
+                        </span>
+                  <span>
+                          <span>Amit Sharma</span>
+                  <span class="time">
+                              </span></span>
+                </a><a href=""><i class="fa fa-skype"></i></a>
+                <a href=""><i class="fa fa-mobile"></i></a>
+                <a href=""><i class="fa fa-envelope"></i></a>
+
+
+
+              </li>
+              <li>
+                <a>
+                  <span class="image">
+                          <img src="/images/default.png" alt="img">
+                        </span>
+                  <span>
+                          <span>Savio Smith</span>
+                  <span class="time">
+                              </span></span>
+                </a><a href=""><i class="fa fa-skype"></i></a>
+                <a href=""><i class="fa fa-mobile"></i></a>
+                <a href=""><i class="fa fa-envelope"></i></a>
+
+
+
+
+              </li>
+              <li>
+                <a>
+                  <span class="image">
+                          <img src="/images/default.png" alt="img">
+                        </span>
+                  <span>
+                          <span>Ryan kelly</span>
+                  <span class="time"></span></span>
+                </a><a><i class="fa fa-skype"></i></a>
+                <a href=""><i class="fa fa-mobile"></i></a>
+                <a href=""><i class="fa fa-envelope"></i></a>
+
+
+
+
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+  <!-- /page content -->
+</div>
+
+
+<div id="aptDetail" class="modal fade bs-example-modal-sm " id="appointmentModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img style="margin-left:70px" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" name="aboutme"
+          width="140" height="140" class="img-circle">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                          </button>
+        <h4 class="modal-title" id="patientName" align="center"></h4>
+      </div>
+      <div class="modal-body">
+
+        <h4 class=""><i  class="modalPname"></i>Appointment Details</h4>
+        <div class="">
+          <!--                              <h2>Nicole Pearson</h2>-->
+
+          <p><strong>Age: </strong> <span id="age" class="modalPAge"> </span></p>
+          <p><strong>Gender: </strong> <span id="gender" class="modalPAge"> </span></p>
+          <p><strong>Time: </strong> <span id="starttime" class="modalPEtime"></span> </p>
+          <p><strong>Department: </strong> <span id="department" class="modalPEtime"></span> </p>
+          <!--
+                              <ul class="list-unstyled">
+                                <li><i class="fa fa-building"></i> Address: </li>
+                                <li><i class="fa fa-phone"></i> Phone #: </li>
+                              </ul>
+-->
+        </div>
+        <div class=" bottom text-center">
+          <div class="emphasis">
+
+          </div>
+
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <!--                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+        <!--                          <button type="button" class="btn btn-primary">Save changes</button>-->
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+{{>footer}}
+    <script src="/javascripts/opd.js"></script>

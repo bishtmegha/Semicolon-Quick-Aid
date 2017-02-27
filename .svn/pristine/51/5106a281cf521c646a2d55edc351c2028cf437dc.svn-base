@@ -1,0 +1,478 @@
+{{>header}}
+
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <!-- top tiles -->
+         
+          <br />
+
+          <div class="row">
+
+
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Casualties <small></small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>Patient Name</th>
+                          <th>Age</th>
+                          <th>ETA(Mins)</th>
+                          <th>Initial Diagnosis</th>
+                          <th>Feedback</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                       {{#appoitments}}
+                            <tr>
+                              <th scope="row"><a  class="appointments" href="javascript:void(0);" data-toggle="" data-target=""><i class="fa {{#isMale}}fa-male{{/isMale}} {{^isMale}}fa-female{{/isMale}}"></i></a></th>
+                              <td class="pname">{{firstname}} {{lastname}}</td>
+                              <td class="page">{{age}}</td>
+                              <td class="pETA">{{arrivalTime}}</td>
+                              <td class="pDiagnos">{{disease}}</td>
+                              <td class="">
+                                  {{#validCheck}}
+                                      <a href="javascript:void(0);" class=" validateButtons"><i class="fa fa-thumbs-up "></i></a>
+                                      <a href="javascript:void(0);" class="margin-left-5 validateButtons"><i class="fa fa-thumbs-down "></i></a>
+                                  {{/validCheck}}
+                                </td>
+                            </tr>
+                       {{/appoitments}}
+                       <!-- <tr>
+                          <th scope="row"><a class="appointments" href="javascript:void(0);"><i class="fa fa-male"></i></a></th>
+                          <td class="pname">Jacob Smith</td>
+                          <td class="page">30</td>
+                          <td class="pETA">10</td>
+                          <td class="pDiagnos">Burn Injury</td>
+                        </tr>
+                        <tr>
+                          <th scope="row"><a  class="appointments" href="javascript:void(0);"><i class="fa fa-male"></i></a></th>
+                          <td class="pname">Larry Klark</td>
+                          <td class="page">45</td>
+                          <td class="pETA">30</td>
+                          <td class="pDiagnos">Drowning</td>
+                        </tr> 
+                          <tr>
+                          <th scope="row"><a  class="appointments" href="javascript:void(0);"><i class="fa fa-female"></i></a></th>
+                          <td class="pname">Catherine Perry</td>
+                          <td class="page">45</td>
+                          <td class="pETA">30</td>
+                          <td class="pDiagnos">Leg Injury</td>
+                        </tr>-->
+                      </tbody>
+                    </table>
+
+                  </div>
+                </div>
+              </div>    
+              
+              
+              
+              
+              
+              
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            
+            <div class="panel panel">
+                <div class="panel-heading" id="accordion">
+                    <span class="glyphicon glyphicon-comment"></span> Conversation History
+                    <div class="btn-group pull-right">
+                        <a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                    </div>
+                </div>
+            <div class="panel-collapse collapse in" id="collapseOne">
+                     <div class="panel-body">
+                    <ul class="chat">
+                        <li class=""><span class="chat-img pull-left col-md-5">
+                            <img src="/images/default.png" style="width:inherit" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong class="primary-font">Catherine Perry</strong> <small class="pull-right text-muted">
+                                        <span class="glyphicon glyphicon-time"></span>12 mins ago</small>
+                                </div>
+                                <p>
+                                    hello
+                                </p>
+                            </div>
+                        </li>
+                        <li class="right clearfix"><span class="chat-img pull-right">
+                            <img src="/images/quickaid_small.png" style="width:90%" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
+                                    <strong class="pull-right primary-font">Bots</strong>
+                                </div>
+                                <p>
+                                 hi there how may i help you?
+                                </p>
+                            </div>
+                        </li>
+                         <li class="left clearfix"><span class="chat-img pull-left col-md-5">
+                            <img src="/images/default.png" style="width:inherit" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong class="primary-font">Catherine Perry</strong> <small class="pull-right text-muted">
+                                        <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
+                                </div>
+                                <p>
+                                   i want to book an appointment.
+                                </p>
+                            </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+            </div>
+            </div>
+              
+              
+              
+
+          </div>
+
+
+          <div class="row">
+     
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="x_panel tile fixed_height_320">
+                <div class="x_title">
+                  <h2>Ambulance Status</h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+
+                    <table class="table table-striped">
+                      <tbody>
+                          
+                     {{#ambulance}}
+                        <tr>
+                          <th scope="row"><a  href="javascript:void(0);"><i class="fa fa-ambulance {{#isFree}}free{{/isFree}} {{^isFree}}busy{{/isFree}}"></i></a></th>
+                          <td>{{driver_name}}</td>
+                          <td><a  href="javascript:void(0);"><i class="fa fa-mobile"></i></a></td>
+                        </tr>
+                     {{/ambulance}}      
+                       <!-- <tr>
+                          <th scope="row"><a  href="javascript:void(0);"><i class="fa fa-ambulance busy"></i></a></th>
+                          <td>Steve Bing</td>
+                          <td><a  href="javascript:void(0);"><i class="fa fa-mobile"></i></a></td>
+                        </tr>
+                        <tr>
+                          <th scope="row"><a  href="javascript:void(0);"><i class="fa fa-ambulance free"></i></a></th>
+                          <td>Joyee white</td>
+                          <td><a  href="javascript:void(0);"><i class="fa fa-mobile"></i></a></td>
+                        </tr>-->
+                      </tbody>
+                    </table>
+
+                  </div>
+              </div>
+            </div>
+              
+              
+              
+
+            <div class="col-md-8 col-sm-8 col-xs-12">
+
+              <div class="row">
+
+                <!-- Start to do list -->
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <div class="x_panel">
+                    <div class="x_title">
+                      <h2>Word Capacity</h2>
+                      <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                      </ul>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        
+                    {{#ward}}
+                    <div class="widget_summary">
+                      <div class="w_left w_25">
+                        <span>{{ward_name}}</span>
+                      </div>
+                      <div class="w_center w_55">
+                        <div class="progress">
+                          <div class="progress-bar bg-green" role="progressbar" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%;">
+                            <span class="sr-only">{{percentage}}% Complete</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="w_right w_20">
+                        <span>66%</span>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                    {{/ward}}
+<!--                    <div class="widget_summary">
+                      <div class="w_left w_25">
+                        <span>General Ward</span>
+                      </div>
+                      <div class="w_center w_55">
+                        <div class="progress">
+                          <div class="progress-bar bg-green" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+                            <span class="sr-only">50% Complete</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="w_right w_20">
+                        <span>50%</span>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="widget_summary">
+                      <div class="w_left w_25">
+                        <span>Heart Speciality</span>
+                      </div>
+                      <div class="w_center w_55">
+                        <div class="progress">
+                          <div class="progress-bar bg-green" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
+                            <span class="sr-only">25% Complete</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="w_right w_20">
+                        <span>25%</span>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                   
+                    <div class="widget_summary">
+                      <div class="w_left w_25">
+                        <span>Ortho Ward</span>
+                      </div>
+                      <div class="w_center w_55">
+                        <div class="progress">
+                          <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+                            <span class="sr-only">80% Complete</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="w_right w_20">
+                        <span>80%</span>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>-->
+                        
+                        
+                        
+                    </div>
+                  </div>
+                </div>
+                <!-- End to do list -->
+                
+                <!-- start of weather widget -->
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <div class="x_panel">
+                    <div class="x_title">
+                      <h2>Doctors On Call</h2>
+                      <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                      </ul>
+                      <div class="clearfix"></div>
+                    </div>
+               <div class="x_content">
+                  <ul class="list-unstyled msg_list">
+                   {{#doctors}}
+                    <li>
+                      <a>
+                        <span class="image">
+                          <img src="/images/default.png" alt="img" />
+                        </span>
+                        <span>
+                          <span>{{firstname}} {{lastname}}</span>
+                          <span class="time">
+                              <a href="javascript:void(0);"><i class="fa fa-skype"></i></a>
+                              <a href="javascript:void(0);"><i class="fa fa-mobile"></i></a>
+                              <a href="javascript:void(0);"><i class="fa fa-envelope"></i></a>
+                            </span>
+                        </span>
+                    
+                      </a>
+                    </li>
+                 {{/doctors}}
+                 <!--   <li>
+                      <a>
+                        <span class="image">
+                          <img src="/images/default.png" alt="img" />
+                        </span>
+                        <span>
+                          <span>Amit Sharma</span>
+                          <span class="time">
+                              <a href="javascript:void(0);"><i class="fa fa-skype"></i></a>
+                              <a href="javascript:void(0);"><i class="fa fa-mobile"></i></a>
+                              <a href="javascript:void(0);"><i class="fa fa-envelope"></i></a>
+                            </span>
+                        </span>
+                      </a>
+                    </li>-->
+                    <!--<li>
+                      <a>
+                        <span class="image">
+                          <img src="/images/default.png" alt="img" />
+                        </span>
+                        <span>
+                          <span>Savio Smith</span>
+                           <span class="time">
+                              <a href="javascript:void(0);"><i class="fa fa-skype"></i></a>
+                              <a href="javascript:void(0);"><i class="fa fa-mobile"></i></a>
+                              <a href="javascript:void(0);"><i class="fa fa-envelope"></i></a>
+                            </span>
+                        </span>
+                        
+                      </a>
+                    </li>-->
+                  <!--  <li>
+                      <a>
+                        <span class="image">
+                          <img src="/images/default.png" alt="img" />
+                        </span>
+                        <span>
+                          <span>Ryan kelly</span>
+                           <span class="time"><a><i class="fa fa-skype"></i></a>
+                            <a href=""><i class="fa fa-mobile"></i></a>
+                              <a href=""><i class="fa fa-envelope"></i></a>
+                            </span>
+                        </span>
+                       
+                      </a>
+                    </li>-->
+                  </ul>
+                </div>
+                  </div>
+
+                </div>
+                <!-- end of weather widget -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+
+<!----  modals  ---->
+
+            <!--  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="profileModal">Small modal</button>
+-->
+                  <div class="modal fade bs-example-modal-sm "  id="appointmentModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                      <div class="modal-content">
+
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                          </button>
+                          <h4 class="modal-title" id="myModalLabel2">Appointment Details</h4>
+                        </div>
+                        <div class="modal-body">
+                                                
+                            <h4 class=""><i class="modalPname">Mark Johonson</i></h4>
+                            <div class="">
+<!--                              <h2>Nicole Pearson</h2>-->
+                              <p><strong>Initial Diagnosis: </strong> <span class="modalPDiagnoss">Chest Pain</span> </p>
+                              <p><strong>Age: </strong> <span class="modalPAge">50 </span></p>
+                              <p><strong>Arriving in: </strong> <span class="modalPEtime">40</span> </p>
+                
+<!--
+                              <ul class="list-unstyled">
+                                <li><i class="fa fa-building"></i> Address: </li>
+                                <li><i class="fa fa-phone"></i> Phone #: </li>
+                              </ul>
+-->
+                            </div>
+                          <div class=" bottom text-center">
+                            <div class="emphasis">
+                             
+                            </div>
+                           
+                          </div>
+                        
+                        
+                        </div>
+                        <div class="modal-footer">
+<!--                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+<!--                          <button type="button" class="btn btn-primary">Save changes</button>-->
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+<!---   -->
+
+
+
+
+
+
+
+{{>footer}}
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $(".appointments").click(function(){
+            var parentElement = $(this).parent().parent()
+            var pateintName = $(parentElement).find(".pname").text();
+            var pateintAge = $(parentElement).find(".page").text();
+            var pateintETime = $(parentElement).find(".pETA").text();
+            var pateintDiagnos = $(parentElement).find(".pDiagnos").text();
+            
+            $("#appointmentModal").find(".modalPname").text(pateintName)
+            $("#appointmentModal").find(".modalPDiagnoss").text(pateintDiagnos)
+            $("#appointmentModal").find(".modalPAge").text(pateintAge)
+            $("#appointmentModal").find(".modalPEtime").text(pateintETime)
+            $("#appointmentModal").modal("show");
+            
+        })
+        
+        $(".validateButtons").click(function(){
+            var self = this;
+            $(this).parent().find(".validateButtons").each(function(){
+                if(this != self){
+                    $(this).addClass('hidden')
+                    
+                }
+                
+            })
+            
+        })
+        $(".fa-male").css("color","blue")
+        $(".fa-female").css("color","red")
+        $(".free").css("color","green")
+        $(".busy").css("color","red") 
+        
+        $(".fa-thumbs-up").css("color","green")
+        $(".fa-thumbs-down").css("color","red")
+        
+    })
+
+</script>

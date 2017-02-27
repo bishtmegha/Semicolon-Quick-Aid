@@ -1,0 +1,18 @@
+{{>header}}
+<div class="right_col" role="main">
+    <div>
+     <iframe src="/default.asp"></iframe> 
+     </div>
+      <div>
+     <iframe src="/default.asp"></iframe> 
+     </div>
+      <div>
+     <iframe src="/default.asp"></iframe> 
+     </div>
+      <div>
+     <iframe src="/default.asp"></iframe> 
+     </div>
+</div>
+
+{{>footer}}
+ 

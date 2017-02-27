@@ -1,0 +1,177 @@
+$(document).ready(function() {
+    var stream = null;
+
+    var audioElement = null;
+
+    $("#node-red-label").click(function() {
+        window.open('https://' + window.location.hostname + "/red", '_blank');
+    });
+
+    $chatInput = $('#chat-input');
+    $loader = $('.loader');
+    $micButton = $('.chat-window--microphone-button');
+
+    var isNodeJs = function() {
+        return true;
+    };
+
+    var converseUrl = function() {
+        return '/conversejs';
+    };
+
+
+    function sendRequest() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(onGotWeatherSuccess, onGotWeatherFailed);
+        } else {
+            alert('Geolocation is not supported by this browser.');
+        }
+    }
+
+    var getSTTToken = $.ajax('/api/speech-to-text/token');
+    var getTTSToken = $.ajax('/api/text-to-speech/token');
+
+    var deactivateMicButton = $micButton.removeClass.bind($micButton, 'active');
+
+    function record() {
+        getSTTToken.then(function(token) {
+            $micButton.addClass('active');
+
+            stream = WatsonSpeech.SpeechToText.recognizeMicrophone({
+                token: token,
+                continuous: false,
+                outputElement: $chatInput[0],
+                content_type: 'audio/wav',
+                keepMicrophone: navigator.userAgent.indexOf('Firefox') > 0
+            });
+
+            stream.promise().then(function() {
+                    $micButton.addClass('chat-window--microphone-button');
+                    console.log('Microphone opened');
+                    $micButton.addClass('normal');
+                    converse($chatInput.val());
+                })
+                .then(function(error) {
+                    $micButton.addClass('normal');
+                    console.log('Microphone closed');
+                    deactivateMicButton;
+                })
+                .catch(function(error) {
+                    $micButton.addClass('normal');
+                    console.log('catch micrphone');
+                    deactivateMicButton;
+                })
+        });
+    }
+
+    function stopRecording() {
+        $micButton.addClass('normal');
+        if (stream) {
+            try {
+                stream.stop;
+                //setTimeout(stream.stop, 500);
+            } catch (err) {
+                console.log("Error in stopRecording() " + err);
+            }
+        }
+    }
+
+    function text2Speech(data) {
+        getTTSToken.then(function(token) {
+            WatsonSpeech.TextToSpeech.synthesize({
+                text: data,
+                token: token
+            });
+        });
+    }
+
+    $micButton.mousedown(function() {
+        $micButton.removeClass('normal').addClass('active');
+        if (isNodeJs()) {
+            record();
+        } else {}
+
+    });
+
+    $micButton.mouseup(function() {
+        $micButton.addClass('normal');
+        if (isNodeJs()) {
+            stopRecording();
+        } else {}
+    });
+
+    $loader.hide();
+    $('#messages').append($('<li>').text("Hello I am Watson, How may I help?"));
+
+    $("#send_message").click(function() {
+        console.log("send_message - click");
+        var msg = $('#chat-input').val();
+        converse("hello", msg);
+    });
+	
+    var converse = function(userText, payload) {
+        alert('converse - function');
+
+        $.post({
+            url: converseUrl(),
+            data: payload,
+            dataType: 'json',
+            success: function(data) {
+                alert(data);
+
+                if (audioElement) {
+                    audioElement.pause();
+                    if ((audioElement.currentTime !== 0) &&
+                        (audioElement.currentTime > 0 && audioElement.currentTime < audioElement.duration)) {
+                        audioElement.currentTime = 0;
+                    }
+                    audioElement = null;
+                }
+
+                getTTSToken.then(function(token) {
+                    audioElement = WatsonSpeech.TextToSpeech.synthesize({
+                        text: data,
+                        token: token
+                    });
+                });
+            },
+            error: function(err) {
+                alert(JSON.stringify(err));
+                $loader.hide();
+            }
+        });
+    };
+
+    var emergencyScreenSelection = false;
+
+    /* ===== Custom Events ===== */
+    $$('.message_textarea').on('keyup', function() {
+        var message = $$(this);
+        if (message.val() && message.val() !== '') {
+            console.log('valid');
+            $$('.speak-message').hide();
+            $$('.send-message').show();
+        } else {
+            $$('.send-message').hide();
+            $$('.speak-message').show();
+        }
+    });
+	
+    $$('.talk-to-quickaid').on('click', function() {
+        myApp.showTab('#tab2');
+    });
+	
+    $$('#tab2').on('tab:show', function() {
+        if (emergencyScreenSelection) {
+            myApp.alert(emergencyScreenSelection);
+            emergencyScreenSelection = false;
+        } else {
+            converse();
+        }
+    });
+
+    $$('.card').on('click', function() {
+        emergencyScreenSelection = $$(this).find('.card-content-inner').text();
+        myApp.showTab('#tab2');
+    });
+});
